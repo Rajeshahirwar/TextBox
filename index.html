@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  #container {
+    margin: 20px auto;
+    width: 300px;
+  }
+
+  #inputBox {
+    width: 100%;
+    padding: 5px;
+  }
+
+  #addButton {
+    display: block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  #output {
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+  <div id="container">
+    <input type="text" id="inputBox" placeholder="Enter text...">
+    <button id="addButton">Add</button>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    const addButton = document.getElementById('addButton');
+    const inputBox = document.getElementById('inputBox');
+    const outputDiv = document.getElementById('output');
+
+    addButton.addEventListener('click', () => {
+      const text = inputBox.value;
+      if (text.trim() !== '') {
+        const pTag = document.createElement('p');
+        pTag.textContent = text;
+        outputDiv.appendChild(pTag);
+        inputBox.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
